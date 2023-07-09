@@ -2,11 +2,25 @@ from django.db import models
 
 
 # Create your models here.
-
-# Feed
 class Feed(models.Model):
-    content = models.TextField()        #内容
-    image = models.TextField()          # フィードイメージ
-    profile_image = models.TextField()  # プロフィール写真
-    user_id = models.TextField()        # 書いた人
-    like_count = models.IntegerField()  # いいね！数
+    content = models.TextField()
+    image = models.TextField()  #image
+    email = models.EmailField(default='')     #name
+
+
+class Like(models.Model):
+    feed_id = models.IntegerField(default=0)
+    email = models.EmailField(default='')
+    is_like = models.BooleanField(default=True)
+
+
+class Reply(models.Model):
+    feed_id = models.IntegerField(default=0)
+    email = models.EmailField(default='')
+    reply_content = models.TextField()
+
+
+class Bookmark(models.Model):
+    feed_id = models.IntegerField(default=0)
+    email = models.EmailField(default='')
+    is_marked = models.BooleanField(default=True)

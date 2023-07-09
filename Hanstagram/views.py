@@ -4,9 +4,9 @@ from rest_framework.views import APIView
 
 class Sub(APIView):
     def get(self, request):
-        print("GET")
-        return render(request, "hanstagram/main.html")
+        print("Get")
+        return render(request, "Hannstagram/main.html")
 
-    def post(self, requst):
-        print("POST")
-        return render(requst, "hanstagram/main.html")
+    def post(self, request):
+        print("Post")
+        return render(request, "Hanstagram/main.html")
